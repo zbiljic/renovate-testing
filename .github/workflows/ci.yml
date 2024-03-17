@@ -17,7 +17,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     name: Run Type Check & Linters
-    runs-on: ${{ vars.RUNNER != '' && vars.RUNNER || 'ubuntu-latest' }}
+    runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
 
     steps:
       - name: Checkout repository
