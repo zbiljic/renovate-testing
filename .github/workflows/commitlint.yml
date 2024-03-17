@@ -1,0 +1,21 @@
+name: Lint Commit Messages
+
+on: [pull_request]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+env:
+  RUNNER: ubuntu-latest
+
+jobs:
+  commitlint:
+    runs-on: ${{ env.RUNNER }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check commits messages
+        uses: wagoid/commitlint-github-action@v5
