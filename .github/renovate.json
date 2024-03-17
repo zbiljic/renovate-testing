@@ -24,7 +24,10 @@
       "datasourceTemplate": "npm",
       "depNameTemplate": "bun",
       "depTypeTemplate": "action",
-      "fileMatch": [".github/workflows/**"],
+      "fileMatch": [
+        "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
+        "(^|/)action\\.ya?ml$"
+      ],
       "matchStrings": ["bun-version\\:\\s*(?<currentValue>.*)\\s"],
       "versioningTemplate": "npm"
     }
