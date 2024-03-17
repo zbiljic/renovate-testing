@@ -13,6 +13,7 @@ permissions:
 
 env:
   RENOVATE_DRY_RUN: "full"
+  RENOVATE_AUTODISCOVER: "true"
 
 jobs:
   renovate:
@@ -29,3 +30,5 @@ jobs:
         with:
           configurationFile: .github/renovate-config.cjs
           token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          LOG_LEVEL: "debug"
