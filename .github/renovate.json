@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":combinePatchMinorReleases",
+    ":separateMultipleMajorReleases"
+  ],
+  "enabledManagers": ["github-actions", "bun", "npm", "custom.regex"],
+  "minimumReleaseAge": "3 days",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "npm",
+      "depTypeTemplate": "packageManager",
+      "fileMatch": ["(^|/)package\\.json$"],
+      "matchStrings": [
+        "packageManager\"\\:\\s*\"(?<depName>.*?)\\@(?<currentValue>.*)\""
+      ],
+      "versioningTemplate": "npm"
+    }
+  ],
+  "packageRules": [
+    {
+      "groupName": "definitelyTyped",
+      "matchPackagePrefixes": ["@types/"]
+    },
+    {
+      "extends": ["npm:unpublishSafe"]
+    },
+    {
+      "description": "Use ci semantic type for some deps",
+      "matchFileNames": [".github/workflows/**"],
+      "semanticCommitType": "ci"
+    }
+  ],
+  "postUpgradeTasks": {
+    "commands": [
+      "bun run syncpack",
+      "bun run syncpack:format",
+      "bun run biome:apply"
+    ]
+  },
+  "updateInternalDeps": true
+}
