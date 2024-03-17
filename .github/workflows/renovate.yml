@@ -15,7 +15,7 @@ env:
   RENOVATE_DRY_RUN: "full"
 
 jobs:
-  run-ci:
+  renovate:
     runs-on: ${{ vars.RUNNER != '' && vars.RUNNER || 'ubuntu-latest' }}
 
     steps:
