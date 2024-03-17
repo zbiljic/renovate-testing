@@ -3,7 +3,8 @@
   "extends": [
     "config:recommended",
     ":combinePatchMinorReleases",
-    ":separateMultipleMajorReleases"
+    ":separateMultipleMajorReleases",
+    "npm:unpublishSafe"
   ],
   "enabledManagers": ["github-actions", "bun", "npm", "custom.regex"],
   "minimumReleaseAge": "3 days",
@@ -23,9 +24,6 @@
     {
       "groupName": "definitelyTyped",
       "matchPackagePrefixes": ["@types/"]
-    },
-    {
-      "extends": ["npm:unpublishSafe"]
     },
     {
       "description": "Use ci semantic type for some deps",
