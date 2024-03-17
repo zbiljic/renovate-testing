@@ -11,6 +11,9 @@ permissions:
   contents: read
   pull-requests: read
 
+env:
+  RENOVATE_DRY_RUN: "full"
+
 jobs:
   run-ci:
     runs-on: ${{ vars.RUNNER != '' && vars.RUNNER || 'ubuntu-latest' }}
