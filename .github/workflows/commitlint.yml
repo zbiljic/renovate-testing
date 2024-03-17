@@ -6,12 +6,9 @@ permissions:
   contents: read
   pull-requests: read
 
-env:
-  RUNNER: ubuntu-latest
-
 jobs:
   commitlint:
-    runs-on: ${{ env.RUNNER }}
+    runs-on: ${{ vars.RUNNER != '' && vars.RUNNER || 'ubuntu-latest' }}
 
     steps:
       - name: Checkout repository
