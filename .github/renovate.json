@@ -18,6 +18,15 @@
         "packageManager\"\\:\\s*\"(?<depName>.*?)\\@(?<currentValue>.*)\""
       ],
       "versioningTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "bun",
+      "depTypeTemplate": "action",
+      "fileMatch": [".github/workflows/**"],
+      "matchStrings": ["bun-version\\:\\s*(?<currentValue>.*)\\s"],
+      "versioningTemplate": "npm"
     }
   ],
   "packageRules": [
