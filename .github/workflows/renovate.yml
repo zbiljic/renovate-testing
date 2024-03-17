@@ -58,3 +58,4 @@ jobs:
         with:
           configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
+          mount-docker-socket: "true"
