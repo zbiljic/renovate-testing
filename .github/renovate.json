@@ -33,7 +33,8 @@
     {
       "description": "Update the Renovate GitHub action weekly with fix type",
       "extends": [":semanticCommitType(fix)", "schedule:weekly"],
-      "matchPackageNames": "renovatebot/github-action"
+      "matchPackageNames": "renovatebot/github-action",
+      "semanticCommitType": "ci"
     }
   ],
   "postUpgradeTasks": {
