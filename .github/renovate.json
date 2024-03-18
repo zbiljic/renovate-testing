@@ -51,6 +51,9 @@
   ],
   "postUpgradeTasks": {
     "commands": [
+      "echo $PATH",
+      "ls -la /home",
+      "ls -la /home/runner/",
       "bun run syncpack",
       "bun run syncpack:format",
       "bun run biome:apply"
