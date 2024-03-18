@@ -53,6 +53,16 @@ jobs:
         with:
           bun-version: 1.0.30
 
+      - name: Setup bun
+        run: |
+          echo "-------------"
+          echo "${HOME}"
+          echo "${PATH}"
+          echo "-------------"
+          echo "/home/runner/.bun/bin/bun" >> "$GITHUB_PATH"
+          echo "${GITHUB_PATH}"
+          echo "-------------"
+
       - name: Override default config from dispatch variables
         run: |
           echo "LOG_LEVEL=${{ github.event.inputs.logLevel || env.LOG_LEVEL }}" >> "$GITHUB_ENV"
@@ -67,3 +77,6 @@ jobs:
           configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
+          docker-volumes: |
+            /tmp:/tmp ;
+            /home:/home
