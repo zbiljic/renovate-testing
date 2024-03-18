@@ -51,9 +51,9 @@
   ],
   "postUpgradeTasks": {
     "commands": [
-      "/home/runner/.bun/bin/bun run syncpack",
-      "/home/runner/.bun/bin/bun run syncpack:format",
-      "/home/runner/.bun/bin/bun run biome:apply"
+      "bun run syncpack",
+      "bun run syncpack:format",
+      "bun run biome:apply"
     ]
   },
   "updateInternalDeps": true
