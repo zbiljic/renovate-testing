@@ -77,7 +77,6 @@ jobs:
           configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
-          docker-user: runner
           docker-volumes: |
             /tmp:/tmp ;
             /home:/home
