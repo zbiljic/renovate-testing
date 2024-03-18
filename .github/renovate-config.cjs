@@ -1,8 +1,7 @@
 module.exports = {
   onboarding: false,
-  platform: 'github',
   dependencyDashboardTitle: 'Dependency Dashboard self-hosted',
+  username: 'renovate[bot]',
   gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
   allowedPostUpgradeCommands: ['.*'],
-  repositories: ['zbiljic/renovate-testing'],
 };

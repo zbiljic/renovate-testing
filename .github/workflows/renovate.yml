@@ -52,18 +52,10 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.5
         env:
+          # Extend configuration presets
+          RENOVATE_EXTENDS: github>${{ github.repository }}//.github/renovate-config.cjs
           # Repository taken from variable to keep configuration file generic
           RENOVATE_REPOSITORIES: ${{ github.repository }}
-          # Onboarding not needed for self-hosted
-          RENOVATE_ONBOARDING: "false"
-          # Title for the Dependency Dashboard issue
-          RENOVATE_DEPENDENCY_DASHBOARD_TITLE: "Dependency Dashboard self-hosted"
-          # Username for Git commit
-          RENOVATE_USERNAME: "renovate[bot]"
-          # Git commit author used
-          RENOVATE_GIT_AUTHOR: "Renovate Bot <bot@renovateapp.com>"
-          # A list of regular expressions that decide which post-upgrade tasks are allowed
-          RENOVATE_ALLOWED_POST_UPGRADE_COMMANDS: ".*"
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
