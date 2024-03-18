@@ -53,7 +53,8 @@
     "commands": [
       "echo $PATH",
       "ls -la /home",
-      "ls -la /home/runner/",
+      "ls -la /home/runner/.bun/bin/bun",
+      "/home/runner/.bun/bin/bun --revision",
       "bun run syncpack",
       "bun run syncpack:format",
       "bun run biome:apply"
