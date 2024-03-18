@@ -60,7 +60,7 @@ jobs:
           echo "${PATH}"
           echo "-------------"
           echo "/home/runner/.bun/bin/bun" >> "$GITHUB_PATH"
-          echo "${GITHUB_PATH}"
+          cat "${GITHUB_PATH}"
           echo "-------------"
 
       - name: Override default config from dispatch variables
