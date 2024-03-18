@@ -48,6 +48,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.0.30
+
       - name: Override default config from dispatch variables
         run: |
           echo "LOG_LEVEL=${{ github.event.inputs.logLevel || env.LOG_LEVEL }}" >> "$GITHUB_ENV"
