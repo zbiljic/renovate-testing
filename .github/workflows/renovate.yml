@@ -59,7 +59,7 @@ jobs:
           echo "${HOME}"
           echo "${PATH}"
           echo "-------------"
-          echo "/home/runner/.bun/bin/bun" >> "$GITHUB_PATH"
+          echo "/home/runner/.bun/bin" >> "$GITHUB_PATH"
           cat "${GITHUB_PATH}"
           echo "-------------"
 
