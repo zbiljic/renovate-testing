@@ -36,6 +36,7 @@ permissions:
 env:
   LOG_LEVEL: "info"
   DRY_RUN: ""
+  RENOVATE_CONFIG_FILE: .github/renovate-config.cjs
 
 concurrency: ${{ github.workflow }}
 
@@ -44,6 +45,9 @@ jobs:
     runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Override default config from dispatch variables
         run: |
           echo "LOG_LEVEL=${{ github.event.inputs.logLevel || env.LOG_LEVEL }}" >> "$GITHUB_ENV"
@@ -51,11 +55,7 @@ jobs:
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.5
-        env:
-          # Extend configuration presets
-          RENOVATE_EXTENDS: github>${{ github.repository }}//.github/renovate-config
-          # Repository taken from variable to keep configuration file generic
-          RENOVATE_REPOSITORIES: ${{ github.repository }}
         with:
+          configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
