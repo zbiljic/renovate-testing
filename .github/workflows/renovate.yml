@@ -80,7 +80,7 @@ jobs:
           configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
-          docker-user: 1001
+          # docker-user: 1001
           docker-volumes: |
             /tmp:/tmp ;
             /home:/home
