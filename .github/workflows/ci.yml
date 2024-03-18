@@ -39,5 +39,5 @@ jobs:
       - name: Check linting
         run: bun run biome:ci
 
-      # - name: Check commits messages
-      #   uses: wagoid/commitlint-github-action@v5
+      - name: Check commits messages
+        uses: wagoid/commitlint-github-action@v5
