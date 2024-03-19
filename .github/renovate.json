@@ -53,9 +53,10 @@
       "matchDatasources": ["npm"],
       "postUpgradeTasks": {
         "commands": [
-          "/home/runner/.bun/bin/bun run syncpack",
-          "/home/runner/.bun/bin/bun run syncpack:format",
-          "/home/runner/.bun/bin/bun run biome:apply"
+          "\"/home/runner/.bun/bin/bun --revision\"",
+          "\"/home/runner/.bun/bin/bun run syncpack\"",
+          "\"/home/runner/.bun/bin/bun run syncpack:format\"",
+          "\"/home/runner/.bun/bin/bun run biome:apply\""
         ]
       }
     }
