@@ -60,5 +60,12 @@
       }
     }
   ],
+  "postUpgradeTasks": {
+    "commands": [
+      "bun run syncpack",
+      "bun run syncpack:format",
+      "bun run biome:apply"
+    ]
+  },
   "updateInternalDeps": true
 }
