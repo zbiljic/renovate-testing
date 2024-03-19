@@ -15,7 +15,7 @@
       "depTypeTemplate": "packageManager",
       "fileMatch": ["(^|/)package\\.json$"],
       "matchStrings": [
-        "packageManager\"\\:\\s*\"(?<depName>.*?)\\@(?<currentValue>.*)\""
+        "packageManager'\\:\\s*'(?<depName>.*?)\\@(?<currentValue>.*)'"
       ],
       "versioningTemplate": "npm"
     },
@@ -53,10 +53,13 @@
       "matchDatasources": ["npm"],
       "postUpgradeTasks": {
         "commands": [
-          "\"/home/runner/.bun/bin/bun --revision\"",
-          "\"/home/runner/.bun/bin/bun run syncpack\"",
-          "\"/home/runner/.bun/bin/bun run syncpack:format\"",
-          "\"/home/runner/.bun/bin/bun run biome:apply\""
+          "id",
+          "ls",
+          "ls -la",
+          "/home/runner/.bun/bin/bun --revision",
+          "/home/runner/.bun/bin/bun run syncpack",
+          "/home/runner/.bun/bin/bun run syncpack:format",
+          "/home/runner/.bun/bin/bun run biome:apply"
         ]
       }
     }
