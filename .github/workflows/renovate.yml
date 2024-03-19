@@ -2,9 +2,9 @@ name: Renovate
 
 on:
   # TODO: testing
-  push:
-    branches:
-      - bun
+  # push:
+  #   branches:
+  #     - bun
   schedule:
     # The "*" (#42, asterisk) character has special semantics in YAML, so this
     # string has to be quoted.
