@@ -50,22 +50,15 @@
     },
     {
       "description": "Run additional commands for packages",
-      "matchManagers": ["bun"],
+      "matchDatasources": ["npm"],
       "postUpgradeTasks": {
         "commands": [
-          "bun run syncpack",
-          "bun run syncpack:format",
-          "bun run biome:apply"
+          "/home/runner/.bun/bin/bun run syncpack",
+          "/home/runner/.bun/bin/bun run syncpack:format",
+          "/home/runner/.bun/bin/bun run biome:apply"
         ]
       }
     }
   ],
-  "postUpgradeTasks": {
-    "commands": [
-      "bun run syncpack",
-      "bun run syncpack:format",
-      "bun run biome:apply"
-    ]
-  },
   "updateInternalDeps": true
 }
