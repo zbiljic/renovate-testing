@@ -49,6 +49,11 @@
       "semanticCommitType": "ci"
     },
     {
+      "description": "Ignore wait duration to pass for each separate version",
+      "matchPackageNames": ["bun"],
+      "minimumReleaseAge": ""
+    },
+    {
       "description": "Run additional commands for packages",
       "matchDatasources": ["npm"],
       "postUpgradeTasks": {
