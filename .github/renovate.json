@@ -47,14 +47,18 @@
       "extends": [":semanticCommitType(fix)", "schedule:weekly"],
       "matchPackageNames": "renovatebot/github-action",
       "semanticCommitType": "ci"
+    },
+    {
+      "description": "Run additional commands for packages",
+      "matchManagers": ["bun"],
+      "postUpgradeTasks": {
+        "commands": [
+          "bun run syncpack",
+          "bun run syncpack:format",
+          "bun run biome:apply"
+        ]
+      }
     }
   ],
-  "postUpgradeTasks": {
-    "commands": [
-      "bun run syncpack",
-      "bun run syncpack:format",
-      "bun run biome:apply"
-    ]
-  },
   "updateInternalDeps": true
 }
