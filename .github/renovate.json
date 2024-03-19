@@ -56,6 +56,7 @@
           "id",
           "BUN_INSTALL=/home/ubuntu/.local bash -c \"$(curl -fsSL https://bun.sh/install)\" -- bun-v1.0.30",
           "bun --revision",
+          "bun install",
           "bun run syncpack",
           "bun run syncpack:format",
           "bun run biome:apply"
