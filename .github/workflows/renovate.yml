@@ -2,9 +2,9 @@ name: Renovate
 
 on:
   # TODO: testing
-  # push:
-  #   branches:
-  #     - bun
+  push:
+    branches:
+      - bun
   schedule:
     # The "*" (#42, asterisk) character has special semantics in YAML, so this
     # string has to be quoted.
@@ -55,23 +55,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: 1.0.30
+      # - name: Install bun
+      #   uses: oven-sh/setup-bun@v1
+      #   with:
+      #     bun-version: 1.0.30
 
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      # - name: Install dependencies
+      #   run: bun install --frozen-lockfile
 
-      - name: Setup bun
-        run: |
-          echo "-------------"
-          echo "${HOME}"
-          echo "${PATH}"
-          echo "-------------"
-          echo "/home/runner/.bun/bin" >> "$GITHUB_PATH"
-          cat "${GITHUB_PATH}"
-          echo "-------------"
+      # - name: Setup bun
+      #   run: |
+      #     echo "-------------"
+      #     echo "${HOME}"
+      #     echo "${PATH}"
+      #     echo "-------------"
+      #     echo "/home/runner/.bun/bin" >> "$GITHUB_PATH"
+      #     cat "${GITHUB_PATH}"
+      #     echo "-------------"
 
       - name: Override default config from dispatch variables
         run: |
@@ -87,7 +87,7 @@ jobs:
           configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
-          docker-user: 1001
-          docker-volumes: |
-            /tmp:/tmp ;
-            /home:/home
+          # docker-user: 1001
+          # docker-volumes: |
+          #   /tmp:/tmp ;
+          #   /home:/home
