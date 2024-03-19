@@ -1,0 +1,6 @@
+{
+  "name": "a",
+  "dependencies": {
+    "zod": "3.22.0"
+  }
+}
