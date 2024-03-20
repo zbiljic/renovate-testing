@@ -1,6 +1,12 @@
 name: Lint Commit Messages
 
-on: [pull_request, workflow_dispatch]
+on:
+  # TODO: testing
+  push:
+    branches:
+      - bun
+  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,13 +22,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: 1.0.30
+      # - name: Install bun
+      #   uses: oven-sh/setup-bun@v1
+      #   with:
+      #     bun-version: 1.0.30
 
-      - name: Install dependencies
-        run: bun install
+      # - name: Install dependencies
+      #   run: bun install
 
       - name: Check commits messages
         uses: wagoid/commitlint-github-action@v5
