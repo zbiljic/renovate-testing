@@ -60,7 +60,12 @@
     {
       "description": "Run additional commands for packages",
       "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies", "devDependencies", "peerDependencies"],
+      "matchDepTypes": [
+        "dependencies",
+        "devDependencies",
+        "peerDependencies",
+        "optionalDependencies"
+      ],
       "postUpgradeTasks": {
         "commands": [
           "BUN_VERSION=v1.0.30 && BUN_INSTALL=/home/ubuntu/.local bash -c \"$(curl -fsSL https://bun.sh/install)\" -- \"bun-$BUN_VERSION\" 2>/dev/null",
