@@ -15,7 +15,7 @@
       "depTypeTemplate": "packageManager",
       "fileMatch": ["(^|/)package\\.json$"],
       "matchStrings": [
-        "packageManager'\\:\\s*'(?<depName>.*?)\\@(?<currentValue>.*)'"
+        "packageManager\"\\:\\s*\"(?<depName>.*?)@(?<currentValue>.*)\""
       ],
       "versioningTemplate": "npm"
     },
