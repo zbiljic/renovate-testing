@@ -1,10 +1,6 @@
 name: Renovate
 
 on:
-  # TODO: testing
-  # push:
-  #   branches:
-  #     - bun
   schedule:
     # The "*" (#42, asterisk) character has special semantics in YAML, so this
     # string has to be quoted.
@@ -41,9 +37,6 @@ env:
   LOG_LEVEL: "info"
   DRY_RUN: ""
   RENOVATE_CONFIG_FILE: .github/renovate-config.cjs
-  # TODO: testing
-  # LOG_LEVEL: "debug"
-  # DRY_RUN: "full"
 
 concurrency: ${{ github.workflow }}
 
@@ -69,7 +62,3 @@ jobs:
           configurationFile: ${{ env.RENOVATE_CONFIG_FILE }}
           token: ${{ secrets.RENOVATE_TOKEN }}
           mount-docker-socket: "true"
-          # docker-user: 1001
-          # docker-volumes: |
-          #   /tmp:/tmp ;
-          #   /home:/home

@@ -37,6 +37,16 @@
     }
   ],
   "packageRules": [
+		{
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true,
+      "automergeStrategy": "rebase"
+		},
+		{
+			"matchDepTypes": ["devDependencies"],
+			"automerge": true,
+      "automergeStrategy": "rebase"
+		},
     {
       "groupName": "definitelyTyped",
       "matchPackagePrefixes": ["@types/"]

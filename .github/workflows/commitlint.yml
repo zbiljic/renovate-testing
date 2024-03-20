@@ -1,11 +1,9 @@
 name: Lint Commit Messages
 
 on:
-  # TODO: testing
-  push:
-    branches:
-      - bun
   pull_request:
+    paths-ignore:
+      - '**.md'
   workflow_dispatch:
 
 permissions:
