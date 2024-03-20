@@ -38,12 +38,12 @@ permissions:
   pull-requests: read
 
 env:
-  # LOG_LEVEL: "info"
-  # DRY_RUN: ""
+  LOG_LEVEL: "info"
+  DRY_RUN: ""
   RENOVATE_CONFIG_FILE: .github/renovate-config.cjs
   # TODO: testing
-  LOG_LEVEL: "debug"
-  DRY_RUN: "full"
+  # LOG_LEVEL: "debug"
+  # DRY_RUN: "full"
 
 concurrency: ${{ github.workflow }}
 
@@ -54,24 +54,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # - name: Install bun
-      #   uses: oven-sh/setup-bun@v1
-      #   with:
-      #     bun-version: 1.0.30
-
-      # - name: Install dependencies
-      #   run: bun install --frozen-lockfile
-
-      # - name: Setup bun
-      #   run: |
-      #     echo "-------------"
-      #     echo "${HOME}"
-      #     echo "${PATH}"
-      #     echo "-------------"
-      #     echo "/home/runner/.bun/bin" >> "$GITHUB_PATH"
-      #     cat "${GITHUB_PATH}"
-      #     echo "-------------"
 
       - name: Override default config from dispatch variables
         run: |
