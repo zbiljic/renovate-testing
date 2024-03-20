@@ -58,7 +58,7 @@
       "minimumReleaseAge": ""
     },
     {
-      "description": "Run additional commands for npm packages",
+      "description": "Run additional commands for npm dependencies",
       "matchDatasources": ["npm"],
       "matchDepTypes": [
         "dependencies",
