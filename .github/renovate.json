@@ -31,7 +31,7 @@
       ],
       "matchStrings": [
         "bun-version\\:\\s*(?<currentValue>.*)\\s",
-        "BUN_VERSION\\=(?<currentValue>.*)\\s&&"
+        "BUN_VERSION\\=v(?<currentValue>.*)\\s&&"
       ],
       "versioningTemplate": "npm"
     }
