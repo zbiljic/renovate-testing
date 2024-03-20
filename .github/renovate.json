@@ -26,9 +26,13 @@
       "depTypeTemplate": "action",
       "fileMatch": [
         "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
-        "(^|/)action\\.ya?ml$"
+        "(^|/)action\\.ya?ml$",
+        "(^|/)(\\.(?:github|gitea|forgejo))/renovate\\.json$"
       ],
-      "matchStrings": ["bun-version\\:\\s*(?<currentValue>.*)\\s"],
+      "matchStrings": [
+        "bun-version\\:\\s*(?<currentValue>.*)\\s",
+        "BUN_VERSION\\=(?<currentValue>.*)\\s"
+      ],
       "versioningTemplate": "npm"
     }
   ],
