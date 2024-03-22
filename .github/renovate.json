@@ -38,14 +38,18 @@
   ],
   "packageRules": [
 		{
+      "description": "Automerge non-major updates",
 			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
 			"automerge": true,
-      "automergeStrategy": "rebase"
+      "automergeStrategy": "rebase",
+      "automergeType": "branch"
 		},
 		{
+      "description": "Automerge dev dependencies",
 			"matchDepTypes": ["devDependencies"],
 			"automerge": true,
-      "automergeStrategy": "rebase"
+      "automergeStrategy": "rebase",
+      "automergeType": "branch"
 		},
     {
       "groupName": "definitelyTyped",
