@@ -32,7 +32,7 @@ jobs:
       - name: Install bun
         uses: oven-sh/setup-bun@v1
         with:
-          bun-version: 1.0.33
+          bun-version: 1.0.35
 
       - name: Get bun cache directory path
         id: bun-cache-dir-path
