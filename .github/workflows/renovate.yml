@@ -34,7 +34,7 @@ permissions:
   pull-requests: read
 
 env:
-  LOG_LEVEL: "info"
+  LOG_LEVEL: "debug"
   DRY_RUN: ""
   RENOVATE_CONFIG_FILE: .github/renovate-config.cjs
 
