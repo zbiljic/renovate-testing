@@ -4,6 +4,9 @@
     "config:recommended",
     ":combinePatchMinorReleases",
     ":separateMultipleMajorReleases",
+    "group:definitelyTyped",
+    "group:monorepos",
+    "group:recommended",
     "npm:unpublishSafe"
   ],
   "enabledManagers": ["github-actions", "bun", "npm", "custom.regex"],
@@ -51,10 +54,6 @@
       "automergeStrategy": "rebase",
       "automergeType": "branch"
 		},
-    {
-      "groupName": "definitelyTyped",
-      "matchPackagePrefixes": ["@types/"]
-    },
     {
       "description": "Use ci semantic type for some deps",
       "matchFileNames": [".github/workflows/**"],
