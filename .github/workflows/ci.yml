@@ -24,6 +24,7 @@ jobs:
 
     name: Run Type Check & Linters
     runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
