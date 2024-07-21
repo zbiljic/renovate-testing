@@ -1,6 +1,6 @@
 {
   "name": "c",
   "devDependencies": {
-    "dayjs": "1.11.11"
+    "dayjs": "1.11.12"
   }
 }
