@@ -1,6 +1,6 @@
 {
   "name": "b",
   "devDependencies": {
-    "vitest": "2.1.7"
+    "vitest": "2.1.8"
   }
 }
